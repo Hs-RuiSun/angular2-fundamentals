@@ -1,27 +1,27 @@
 import { Hero } from '../hero.model';
 import { Component } from '@angular/core';
+import { User } from '../user.model';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-hero-form',
+  providers: [LoggerService],
   templateUrl: './app-form.component.html',
   styleUrls: ['./app-form.component.css']
 })
 export class AppFormComponent {
-  value = '';
-  HEROES: Hero[] = [];
-  powers: string[] = ['Really Smart', 'Super Flexible',
-            'Super Hot', 'Weather Changer'];
-  hero: Hero = new Hero('input the name', '', '');
+  constructor(private logger: LoggerService) { }
 
-  onKeyup(inputstr) {
-  this.value = this.value + inputstr + ' | ';
-  }
+  Category = [{ id: 1, name: 'primary' },
+  { id: 2, name: 'middle' },
+  { id: 3, name: 'high' }];
+
+  nationalities: string[] = ['Canada', 'China', 'India'];
+  users: User[] = [];
+  user: User = new User('', '', '', 2);
 
   onSubmit() {
-    if(this.hero.alterEgo != undefined) {
-    this.HEROES.push(new Hero(this.hero.name, this.hero.heroPower, this.hero.alterEgo));
-    } else {
-    this.HEROES.push(new Hero(this.hero.name, this.hero.heroPower));
-    }
+    this.users.push(this.user);
+    this.logger.info(this.user.username);
   }
 }
