@@ -11,6 +11,7 @@ import { ObservableComponent } from './observable&RxJS/observable.component';
 import { SizerComponent } from './template-syntax/sizer.component';
 import { LifeCycleComponent } from './lifecycle-hook/lifecycle-component';
 import { LoggerComponent } from './message/logger.component';
+import { ZippyComponent } from './observable&RxJS/zippy.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { LoggerComponent } from './message/logger.component';
     ObservableComponent,
     SizerComponent,
     LifeCycleComponent,
-    LoggerComponent
+    LoggerComponent,
+    ZippyComponent
   ],
   imports: [
     BrowserModule,
