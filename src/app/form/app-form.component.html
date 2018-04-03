@@ -11,7 +11,7 @@
       <input [(ngModel)]="user.username" name="username"
              #username="ngModel" required
              (keydown)="user.username=''"/>
-      <div *ngIf="username.invalid" [style.font.color]="red">name is required</div>
+      <div *ngIf="username.invalid" [style.font.color]="">name is required</div>
     </fieldset>
     <fieldset>
       <label>password</label>
